@@ -97,6 +97,30 @@ a.en-link:hover{
    background-image: url("/assets/images/pages/about/xq2.jpg");
 }
 
+.tilt.ym {
+    background-image: url("/assets/images/pages/about/ym1.jpg");
+}
+ 
+.tilt.ym:hover {
+   background-image: url("/assets/images/pages/about/ym2.jpg");
+}
+
+.tilt.amber {
+    background-image: url("/assets/images/pages/about/amber1.jpg");
+}
+ 
+.tilt.amber:hover {
+   background-image: url("/assets/images/pages/about/amber2.jpg");
+}
+
+.tilt.lala {
+    background-image: url("/assets/images/pages/about/lala1.jpg");
+}
+ 
+.tilt.lala:hover {
+   background-image: url("/assets/images/pages/about/lala2.jpg");
+}
+
 .zero_left {
 	margin-left : 0px;
 }
