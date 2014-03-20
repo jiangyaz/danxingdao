@@ -26,6 +26,14 @@
 .vnoffset9 { margin-top: -150px; }
 
 
+a.youku-link { font:12px 'Open Sans',sans-serif;
+              color: #FFFFFF; 
+             }
+
+a.youku-link2 { font:12px 'Open Sans',sans-serif;
+              color: #666666;
+             }
+
 a.en-link { font:15px 'Open Sans',sans-serif;
             color: #FFFFFF; 
             text-decoration: none;
