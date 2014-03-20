@@ -4,10 +4,10 @@ if(isset($_POST['submit'])){
     $from = $_POST['email']; // this is the sender's Email address
     $name = $_POST['first_name'];
     $subject = "User Feedback " . $name;
-    $subject2 = "Copy of your form submission";
+    $subject2 = "感谢您给单行道的反馈";
     //$message = $from . " " . $name . " wrote the following:" . "\n\n" . $_POST['message'];
     $message = $name . "(" . $from . ") wrote the following:" . "\n\n" . $_POST['message'];
-    $message2 = "Here is a copy of your message " . $name . "\n\n" . $_POST['message'];
+    $message2 = $name . ",您好！\n\n  我们已经收到您给我们的留言：\n\n" . $_POST['message'];
     //$message = "Here is a copy of your message " . $name . "\n\n" . $_POST['message'];
 
     $headers = "From:" . $from;
