@@ -1025,11 +1025,11 @@
                     <!-- Contact form -->
                     <div class="span6">
                         <h5>我们需要你的反馈</h5>
-                        <form>
-                            <input type="text" class="span12" placeholder="姓名" required="required">
-                            <input type="email" class="span12" placeholder="电邮" required="required">
-                            <textarea rows="8" class="span12" required="required"></textarea>
-                            <button type="submit" class="btn btn-primary">发出去</button>
+                        <form action="mail_handler.php" method="post">
+                        <input type="text" name="first_name" class="span12" placeholder="姓名" required="required">
+                        <input type="text" name="email" class="span12" placeholder="电邮" required="required">
+                        <textarea rows="10" name="message" class="span12" required="required"></textarea>
+                        <button type="submit" name="submit" value="Submit" class="btn btn-primary">发出去</button>
                         </form>
                     </div>
                     <!-- End Contact form -->
