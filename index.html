@@ -23,6 +23,19 @@
     
     <!-- GOOGLE WEB FONTS -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+    <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.6/firebase.js'></script>
+    <script>
+       function subscribe(form) {
+          var email =form.email.value;
+          var atpos=email.indexOf("@");
+          var dotpos=email.lastIndexOf(".");
+          <!-- email validation-->
+          if (!(atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length))
+          {
+              myDataRef.push({email: email});
+          }
+       }
+    </script>
 </head>
 
 <body>
@@ -1026,7 +1039,7 @@
                     <!-- Contact form -->
                     <div class="span6">
                         <h5>我们需要你的反馈</h5>
-                        <form action="mail_handler.php" method="post">
+                        <form action="handler.php" method="post">
                         <input type="text" name="first_name" class="span12" placeholder="姓名" required="required">
                         <input type="email" name="email" class="span12" placeholder="电邮" required="required">
                         <textarea rows="10" name="message" class="span12" required="required"></textarea>
@@ -1037,9 +1050,12 @@
                     <!-- Contact information -->
                     <div class="span5 offset1">
                         <h5>订阅单行道Newsletter</h5>
-                        <form>
-                            <input type="email" class="span12" placeholder="电邮" required="required">
-                            <button type="submit" class="btn btn-primary">订阅</button>
+                        <form action="handler.php" method="get">
+                            <input type="email" name="email" class="span12" placeholder="电邮" required="required">
+                            <button type="submit" class="btn btn-primary"  onClick="subscribe(this.form)">订阅</button>
+                            <script>
+                                 var myDataRef = new Firebase('https://radiant-fire-8364.firebaseio.com/');
+                            </script>
                         </form>
 
                         <h5 class="voffset6">我们的联系方式</h5>
