@@ -134,6 +134,11 @@ a.en-link:hover{
 .tilt.xw { background-image: url("/assets/images/pages/about/xw1.jpg"); }
 .tilt.xw:hover { background-image: url("/assets/images/pages/about/xw2.jpg");}
 
+.tilt.wy { background-image: url("/assets/images/pages/about/wy1.jpg"); }
+.tilt.wy:hover { background-image: url("/assets/images/pages/about/wy2.jpg");}
+
+.tilt.yc { background-image: url("/assets/images/pages/about/yc1.jpg"); }
+.tilt.yc:hover { background-image: url("/assets/images/pages/about/yc2.jpg");}
 
 .zero_left {
 	margin-left : 0px;
