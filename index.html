@@ -23,19 +23,6 @@
     
     <!-- GOOGLE WEB FONTS -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
-    <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.6/firebase.js'></script>
-    <script>
-       function subscribe(form) {
-          var email =form.email.value;
-          var atpos=email.indexOf("@");
-          var dotpos=email.lastIndexOf(".");
-          <!-- email validation-->
-          if (!(atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length))
-          {
-              myDataRef.push({email: email});
-          }
-       }
-    </script>
 </head>
 
 <body>
@@ -1301,6 +1288,20 @@
 
         ga('create', 'UA-48941341-1', 'danxingdao.org');
         ga('send', 'pageview');
+    </script>
+
+    <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.6/firebase.js'></script>
+    <script>
+       function subscribe(form) {
+          var email =form.email.value;
+          var atpos=email.indexOf("@");
+          var dotpos=email.lastIndexOf(".");
+          <!-- email validation-->
+          if (!(atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length))
+          {
+              myDataRef.push({email: email});
+          }
+       }
     </script>
 </body>
 </html>
