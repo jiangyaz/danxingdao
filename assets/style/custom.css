@@ -60,31 +60,9 @@
   .size5_green { font-size: 15px; color: #92CD00; }
   .size6_green { font-size: 16px; color: #92CD00; }
   .size7_green { font-size: 18px; color: #92CD00; }
-
-  .tilt {
-    width:  300px;
-    height: 300px;   
-    -webkit-transition: all 0.5s ease;
-       -moz-transition: all 0.5s ease;
-         -o-transition: all 0.5s ease;
-        -ms-transition: all 0.5s ease;
-            transition: all 0.5s ease;
-    background-image: url("/assets/images/pages/about/jy4.jpg"); 
-  }
-
-  .tilt:hover {
-    -webkit-transform: rotate(-10deg);
-       -moz-transform: rotate(-10deg);
-         -o-transform: rotate(-10deg);
-        -ms-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-     background-image: url("/assets/images/pages/about/jy3.jpg");
-  }
-
 }
 
 @media (min-width: 700px) {
-    
   .size1_white { font-size: 13px; color: #FFFFFF; }
   .size1b_white { font-size: 14px; color: #FFFFFF; }
   .size2_white { font-size: 16px; color: #FFFFFF; }
@@ -119,25 +97,6 @@
   .size5_green { font-size: 25px; color: #92CD00; }
   .size6_green { font-size: 28px; color: #92CD00; }
   .size7_green { font-size: 31px; color: #92CD00; }
-
-  .tilt {
-    width:  300px;
-    height: 300px;
-    -webkit-transition: all 0.5s ease;
-       -moz-transition: all 0.5s ease;
-         -o-transition: all 0.5s ease;
-        -ms-transition: all 0.5s ease;
-            transition: all 0.5s ease;
-    background-image: url("/assets/images/pages/about/jy4.jpg"); 
-  }
-  .tilt:hover {
-    -webkit-transform: rotate(-10deg);
-       -moz-transform: rotate(-10deg);
-         -o-transform: rotate(-10deg);
-        -ms-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-     background-image: url("/assets/images/pages/about/jy3.jpg");
-  }
 }
 
 .preload{
@@ -173,6 +132,26 @@ a.en-link:hover{
 }
 
 /*TILT*/
+.tilt {
+  width:  300px;
+  height: 300px;   
+  -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+  background-image: url("/assets/images/pages/about/jy4.jpg"); 
+}
+
+.tilt:hover {
+  -webkit-transform: rotate(-10deg);
+     -moz-transform: rotate(-10deg);
+       -o-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+   background-image: url("/assets/images/pages/about/jy3.jpg");
+}
+
 
 .tilt.xq { background-image: url("/assets/images/pages/about/xq1.jpg"); }
 .tilt.xq:hover { background-image: url("/assets/images/pages/about/xq3.jpg");}
