@@ -188,7 +188,11 @@ a.en-link:hover{
 }
 
 .bit_left {
-	margin-left : 20px;
+	margin-left : 20px !important;
+}
+
+.bit2_left {
+  margin-left : 40px !important;
 }
 
 .bit_right {
