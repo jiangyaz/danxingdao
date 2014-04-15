@@ -47,26 +47,23 @@
                     
                     <!-- MAIN MENU -->
                     <ul id="main-menu" class="nav-collapse collapse">
-                        <li><a href="#page-welcome">首页</a></li>
-                        <li><a href="#page-what-we-do">我们要做什么</a></li>
-                        <li><a href="#page-why">行动由来</a></li>
-                        <li><a href="#page-concept">微公益模式</a></li>
-                        <li><a href="#page-charity">中国公益⋅免费午餐</a></li>
-                        <li><a href="#page-about">背后的人</a></li>
-                        <li><a href="#page-support">加入单行道</a></li>
-                        <li><a href="#page-blog">最新消息</a></li>
-                        <li><a href="#page-faq">FAQ</a></li>
-                        <li><a href="#page-contact">联系我们</a></li>
+                        <li><a href="../#page-what-we-do">我们要做什么</a></li>
+                        <li><a href="../#page-concept">微公益模式</a></li>
+                        <li><a href="../#page-support">加入单行道</a></li>
+                        <li><a href="../#page-charity">合作公益：免费午餐</a></li>
+                        <!--<li><a href="#page-blog">最新消息</a></li> -->
+                        <li><a href="../#page-about">背后的人</a></li>
+                        <li><a href="../#page-why">行动由来</a></li>
+                        <li><a href="../#page-faq">FAQ</a></li>
+                        <li><a href="../#page-contact">联系我们</a></li>
                     </ul>
                     <!-- END MAIN MENU -->
                     
                     <!-- SOCIAL ICONS -->
                     <div class="social-icons hover-big pull-right">
-                        <a href="http://www.facebook.com" class="sicon-facebook"><i>Facebook</i></a>
-                        <a href="http://www.renren.com" class="sicon-pinterest"><i>RenRen</i></a>
-                        <a href="http://www.weibo.com" class="sicon-linkedin"><i>Weibo</i></a>
-                        <a href="http://www.youku.com" class="sicon-youtube"><i>Youku</i></a>
-                        <a href="http://www.youtube.com" class="sicon-clock"><i>YouTube</i></a>
+                        <a href="http://www.facebook.com/danxingdao" class="sicon-facebook" target="_blank"><i>Facebook</i></a>
+                        <a href="http://page.renren.com/601871434" class="sicon-pinterest" target="_blank"><i>RenRen</i></a>
+                        <a href="http://www.weibo.com/5040920641" class="sicon-linkedin" target="_blank"><i>Weibo</i></a>
                     </div>
                     <!-- END SOCIAL ICONS -->
                 </div>
@@ -91,7 +88,7 @@
                 <!-- Features blocks -->
                 <div class="row">
                     <div class="span12 center">
-                        <img src="assets/images/pages/welcome/logo.png" alt="Logo">
+                        <img src="assets/images/pages/welcome/logo.jpg" alt="Logo">
                     </div>
                 </div>
 
