@@ -71,6 +71,7 @@
   .size5_white { font-size: 25px; color: #FFFFFF; }
   .size6_white { font-size: 28px; color: #FFFFFF; }
   .size7_white { font-size: 31px; color: #FFFFFF; }
+  .sizel_white { font-size: 50px; color: #FFFFFF; }
 
   .size1_gray { font-size: 13px; color: #666666; }
   .size1b_gray { font-size: 14px; color: #666666; }
@@ -80,6 +81,15 @@
   .size5_gray { font-size: 25px; color: #666666; }
   .size6_gray { font-size: 28px; color: #666666; }
   .size7_gray { font-size: 31px; color: #666666; }
+
+  .size1_lgray { font-size: 13px; color: #CFCFCF; }
+  .size1b_lgray { font-size: 14px; color:#CFCFCF; }
+  .size2_lgray { font-size: 16px; color: #CFCFCF; }
+  .size3_lgray { font-size: 19px; color: #CFCFCF; }
+  .size4_lgray { font-size: 22px; color: #CFCFCF; }
+  .size5_lgray { font-size: 25px; color: #CFCFCF; }
+  .size6_lgray { font-size: 28px; color: #CFCFCF; }
+  .size7_lgray { font-size: 31px; color: #CFCFCF; }
 
   .size1_blk { font-size: 13px; color: #292929; }
   .size1b_blk { font-size: 14px; color: #292929; }
@@ -129,6 +139,10 @@ a.en-link:hover{
     -moz-box-shadow: 3px 3px 4px #666666; 
     -webkit-box-shadow: 3px 3px 4px #666666; 
     box-shadow: 3px 3px 4px #666666;
+}
+
+.green-bg  {
+  background-color: #00AB66 !important;
 }
 
 /*TILT*/
