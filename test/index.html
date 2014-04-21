@@ -206,7 +206,7 @@
                         <div class="span3 center">
                             <img src="../assets/images/pages/what_we_do/check.png" alt="Concept" class="img-responsive" style="max-height:80px;">
                             <div class="row voffset4">
-                                <p class="sizel_white"> <span id="social_count">145</span><span class="size3_lgray"> 次点赞转发</span></p>
+                                <p class="sizel_white"> <span id="social_count">0</span><span class="size3_lgray"> 次点赞转发</span></p>
                                 <p class="size1b_white"> x 1份免费午餐</p>
                             </div>
                         </div>
@@ -1296,7 +1296,12 @@
     </script>
 
     <script>
-        document.getElementById("social_count").innerHTML = "200";
+	var ref = new Firebase('https://radiant-fire-8364.firebaseio.com/likes');
+	ref.on('value', function(snapshot){
+		if (snapshot.val()==null)
+        		document.getElementById("social_count").innerHTML = "200";
+		else document.getElementById("social_count").innerHTML = snapshot.val().fb_likes+snapshot.val().weibo_follows;
+	});
         document.getElementById("photo_count").innerHTML = "786";
         document.getElementById("video_count").innerHTML = "456";
         document.getElementById("ride_count").innerHTML = "1";
