@@ -17,8 +17,10 @@ img {
 }
 
 .image-caption h3{
-  font-size: 21px;
+  font-size: 14px;
   margin: 0;
+  line-height: 20px !important;
+  text-align: justify !important;
 }
 
 
