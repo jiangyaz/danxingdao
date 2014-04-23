@@ -1300,7 +1300,8 @@
 	ref.on('value', function(snapshot){
 		if (snapshot.val()==null)
         		document.getElementById("social_count").innerHTML = "200";
-		else document.getElementById("social_count").innerHTML = snapshot.val().fb_likes+snapshot.val().weibo_follows;
+		else document.getElementById("social_count").innerHTML = snapshot.val().fb_likes + 
+			snapshot.val().weibo_follows + snapshot.val().weibo_reposts;
 	});
         document.getElementById("photo_count").innerHTML = "36";
         document.getElementById("video_count").innerHTML = "16";
