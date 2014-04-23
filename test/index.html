@@ -28,7 +28,8 @@
     
     <!-- GOOGLE WEB FONTS -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
-    <script async type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.6/firebase.js'></script>
+    <!-- <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.6/firebase.js'></script> -->
+    <script src="../assets/js/firebase.js" type="text/javascript"></script>
     <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
@@ -206,35 +207,35 @@
                         <div class="span3 center">
                             <img src="../assets/images/pages/what_we_do/check.png" alt="Concept" class="img-responsive" style="max-height:80px;">
                             <div class="row voffset4">
-                                <p class="sizel_white"> <span id="social_count">0</span><span class="size3_lgray"> 次点赞转发</span></p>
+                                <p class="sizel_white"> <span id="social_count">?</span><span class="size3_lgray"> 次点赞转发</span></p>
                                 <p class="size1b_white"> x 1份免费午餐</p>
                             </div>
                         </div>
                         <div class="span3 center">
                             <img src="../assets/images/pages/what_we_do/photo.png" alt="Concept" class="img-responsive" style="max-height:80px;">
                             <div class="row voffset4">
-                                <p class="sizel_white"> <span id="photo_count">21</span><span class="size3_lgray"> 张发现中国照片</span></p>
+                                <p class="sizel_white"> <span id="photo_count">?</span><span class="size3_lgray"> 张发现中国照片</span></p>
                                 <p class="size1b_white"> x 10份免费午餐</p>
                             </div>
                         </div>
                         <div class="span3 center">
                             <img src="../assets/images/pages/what_we_do/video.png" alt="Concept" class="img-responsive" style="max-height:80px;">
                             <div class="row voffset4">
-                                <p class="sizel_white"><span id="video_count">13</span><span class="size3_lgray"> 段正能量故事</span></p>
+                                <p class="sizel_white"><span id="video_count">?</span><span class="size3_lgray"> 段正能量故事</span></p>
                                 <p class="size1b_white"> x 60份免费午餐</p>
                             </div>
                         </div>
                         <div class="span3 center">
                             <img src="../assets/images/pages/what_we_do/ride.png" alt="Concept" class="img-responsive" style="max-height:80px;">
                             <div class="row voffset4">
-                                <p class="size3_lgray"><span class="sizel_white" id="ride_count">0</span> 公里骑行</p>
+                                <p class="size3_lgray"><span class="sizel_white" id="ride_count">?</span> 公里骑行</p>
                                 <p class="size1b_white"> x 5份免费午餐</p>
                             </div>
                         </div>
                     </div>
                     <h4 class="line-divider size2_white vnoffset2"></h4>    
                     <div class= "row-fluid center voffset6">
-                        <p class="sizel_white"> = <span id="total_count">1256</span> 份免费午餐 <span class="size3_lgray">捐献给贫困山区的孩子们</span></p>
+                        <p class="sizel_white"> = <span id="total_count">?</span> 份免费午餐 <span class="size3_lgray">捐献给贫困山区的孩子们</span></p>
                     </div>
                 </div>
             </article>
@@ -1296,17 +1297,33 @@
     </script>
 
     <script>
-	var ref = new Firebase('https://radiant-fire-8364.firebaseio.com/likes');
-	ref.on('value', function(snapshot){
-		if (snapshot.val()==null)
-        		document.getElementById("social_count").innerHTML = "200";
-		else document.getElementById("social_count").innerHTML = snapshot.val().fb_likes + 
-			snapshot.val().weibo_follows + snapshot.val().weibo_reposts;
-	});
-        document.getElementById("photo_count").innerHTML = "36";
-        document.getElementById("video_count").innerHTML = "16";
-        document.getElementById("ride_count").innerHTML = "1";
-        document.getElementById("total_count").innerHTML = "1234";
+    	var ref = new Firebase('https://radiant-fire-8364.firebaseio.com/likes');
+        var social_count;
+        
+        // Right now updated manually
+        var wechat_count = 38;
+        var renren_count = 15;
+        var photo_count = 36;
+        var video_count = 16;
+        var ride_count = 0;
+        
+    	ref.on('value', function(snapshot) {
+            
+
+    		if (snapshot.val() == null)
+            	social_count = 200;
+    		else 
+                social_count = snapshot.val().fb_likes + snapshot.val().weibo_follows + snapshot.val().weibo_reposts 
+                             + wechat_count + renren_count;
+
+            var total_count = photo_count * 10 + ride_count * 5 + video_count * 60 + social_count;
+            document.getElementById("social_count").innerHTML = social_count;
+            document.getElementById("total_count").innerHTML = total_count;
+    	});
+        
+        document.getElementById("photo_count").innerHTML = photo_count;
+        document.getElementById("video_count").innerHTML = video_count;
+        document.getElementById("ride_count").innerHTML = ride_count;
         document.getElementById("update_time").innerHTML = new Date();
     </script>
 </body>
