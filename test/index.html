@@ -207,7 +207,9 @@
                         <div class="span3 center">
                             <img src="../assets/images/pages/what_we_do/check.png" alt="Concept" class="img-responsive" style="max-height:80px;">
                             <div class="row voffset4">
-                                <p class="sizel_white"> <span id="social_count">?</span><span class="size3_lgray"> 次点赞转发</span></p>
+                                <p class="sizel_white"> <span id="social_count">?</span><span class="size3_lgray"> 次
+                                    <a id="example" rel="popover" data-html="true" data-placement="top" data-original-title="社交媒体互动统计">点赞转发
+                                    </a>
                                 <p class="size1b_white"> x 1份免费午餐</p>
                             </div>
                         </div>
@@ -1306,25 +1308,39 @@
         var photo_count = 36;
         var video_count = 16;
         var ride_count = 0;
-        
-    	ref.on('value', function(snapshot) {
-            
+        var fb_count;
+        var weibo_count;
+        var weibo_reposts;
 
+    	ref.on('value', function(snapshot) 
+        {
     		if (snapshot.val() == null)
             	social_count = 200;
-    		else 
+    		else  {
                 social_count = snapshot.val().fb_likes + snapshot.val().weibo_follows + snapshot.val().weibo_reposts 
                              + wechat_count + renren_count;
+                fb_count = snapshot.val().fb_likes;
+                weibo_count = snapshot.val().weibo_follows;
+                weibo_reposts = snapshot.val().weibo_reposts;
+            }
 
             var total_count = photo_count * 10 + ride_count * 5 + video_count * 60 + social_count;
             document.getElementById("social_count").innerHTML = social_count;
-            document.getElementById("total_count").innerHTML = total_count;
+            document.getElementById("total_count").innerHTML = total_count; 
+
+            $(function () {
+                $('#example').popover({content: "<p class='size2_blk'>Facebook Like：" + fb_count +"</p><p class='size2_blk'>人人关注：" + renren_count +"</p><p class='size2_blk'>微博关注：" + weibo_count +"</p> <p class='size2_blk'>微博转发：" + weibo_reposts +"</p> <p class='size2_blk'>微信平台关注：" + wechat_count +"</p>" });
+            });
     	});
-        
+
         document.getElementById("photo_count").innerHTML = photo_count;
         document.getElementById("video_count").innerHTML = video_count;
         document.getElementById("ride_count").innerHTML = ride_count;
         document.getElementById("update_time").innerHTML = new Date();
+
+        
+
+        
     </script>
 </body>
 </html>
