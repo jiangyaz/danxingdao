@@ -1336,10 +1336,9 @@
         document.getElementById("photo_count").innerHTML = photo_count;
         document.getElementById("video_count").innerHTML = video_count;
         document.getElementById("ride_count").innerHTML = ride_count;
-        document.getElementById("update_time").innerHTML = new Date();
 
-        
-
+        var d = new Date;
+        document.getElementById("update_time").innerHTML = d.getFullYear() +"年" + (d.getMonth()+1)+"月"+d.getDate()+"日 " + d.getHours()+":" +d.getMinutes()+":"+ d.getSeconds();
         
     </script>
 </body>
