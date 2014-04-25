@@ -11,8 +11,8 @@ $queryParams ['pageId'] = 601871434;
 $response = $client->execute ( "/v2/page/get", "GET", $queryParams );
 
 $like_num = $response['fansCount'];
-echo $like_num;
 
 $firebase = new Firebase('https://radiant-fire-8364.firebaseio.com/');
-// $res_num = $firebase->set('likes/renren_fans', $like_num);
+$res_num = $firebase->set('likes/renren_fans', $like_num);
+echo $res_num;
 ?>
