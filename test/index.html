@@ -1304,11 +1304,11 @@
         
         // Right now updated manually
         var wechat_count = 38;
-        var renren_count = 15;
         var photo_count = 36;
         var video_count = 16;
         var ride_count = 0;
         var fb_count;
+        var renren_count;
         var weibo_count;
         var weibo_reposts;
 
@@ -1318,10 +1318,11 @@
             	social_count = 200;
     		else  {
                 social_count = snapshot.val().fb_likes + snapshot.val().weibo_follows + snapshot.val().weibo_reposts 
-                             + wechat_count + renren_count;
+                               + snapshot.val().renren_fans + wechat_count;
                 fb_count = snapshot.val().fb_likes;
                 weibo_count = snapshot.val().weibo_follows;
                 weibo_reposts = snapshot.val().weibo_reposts;
+                renren_count = snapshot.val().renren_fans;
             }
 
             var total_count = photo_count * 10 + ride_count * 5 + video_count * 60 + social_count;
