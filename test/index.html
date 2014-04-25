@@ -208,7 +208,7 @@
                             <img src="../assets/images/pages/what_we_do/check.png" alt="Concept" class="img-responsive" style="max-height:80px;">
                             <div class="row voffset4">
                                 <p class="sizel_white"> <span id="social_count">?</span><span class="size3_lgray"> 次
-                                    <a id="example" rel="popover" data-html="true" data-placement="top" data-original-title="社交媒体互动统计">点赞转发
+                                    <a id="example" rel="popover" data-html="true" data-placement="top" data-original-title="社交媒体互动统计"><span style="color: #FFFFFF !important">点赞转发</span>
                                     </a>
                                 <p class="size1b_white"> x 1份免费午餐</p>
                             </div>
@@ -1299,6 +1299,12 @@
     </script>
 
     <script>
+
+        function padToTWO(number) {
+            if (number<=99) { number = ("0"+number).slice(-2); }
+            return number;
+        }
+
     	var ref = new Firebase('https://radiant-fire-8364.firebaseio.com/likes');
         var social_count;
         
@@ -1339,7 +1345,7 @@
         document.getElementById("ride_count").innerHTML = ride_count;
 
         var d = new Date;
-        document.getElementById("update_time").innerHTML = d.getFullYear() +"年" + (d.getMonth()+1)+"月"+d.getDate()+"日 " + d.getHours()+":" +d.getMinutes()+":"+ d.getSeconds();
+        document.getElementById("update_time").innerHTML = d.getFullYear() +"年" + (d.getMonth()+1)+"月"+d.getDate()+"日 " + padToTWO(d.getHours()) +":" + padToTWO(d.getMinutes());
         
     </script>
 </body>
