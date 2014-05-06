@@ -127,10 +127,20 @@ a.en-link { font:15px 'Open Sans',sans-serif;
             text-decoration: none;
           }
 
-a.green-link { font:14px 'Open Sans',sans-serif;
-            color: #92CD00; 
-            text-decoration: none;
+a.green-link { font:15px 'Open Sans',sans-serif;
+               color: #92CD00; 
+               text-decoration: none;
           }
+
+a.blog-link {
+  font-family: 'Open Sans',sans-serif;
+font-size: 12px;
+font-weight: bold;
+text-transform: uppercase;
+line-height: 18px;
+letter-spacing: 1px;
+color: #292929;
+}
 
 a.en-link:hover{
     text-decoration: none;
