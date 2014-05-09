@@ -1302,9 +1302,9 @@
         var social_count;
         
         // Right now updated manually
-        var wechat_count = 60;
-        var photo_count = 86;
-        var video_count = 16;
+        var wechat_count;
+        var photo_count;
+        var video_count;
         var ride_count = 0;
         var fb_count;
         var renren_count;
@@ -1316,6 +1316,9 @@
             if (snapshot.val() == null)
                 social_count = 200;
             else  {
+		wechat_count = snapshot.val().wechat_count;
+		video_count = snapshot.val().video_count;
+		photo_count = snapshot.val().photo_count;
                 social_count = snapshot.val().fb_likes + snapshot.val().weibo_follows + snapshot.val().weibo_reposts 
                                + snapshot.val().renren_fans + wechat_count;
                 fb_count = snapshot.val().fb_likes;
