@@ -27,7 +27,7 @@
     
     <!-- GOOGLE WEB FONTS -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
-    <script async type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.6/firebase.js'></script>
+    <script src="../assets/js/firebase.js" type="text/javascript"></script>
     <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
@@ -632,6 +632,11 @@
                 </div>
                 <div class="row-fluid voffset4">
                     <div class="span2 center">  
+                        <a href="http://www.collegedaily.cc/blog/235/" target="_blank"> 
+                            <img src="../assets/images/pages/voices/beimei.jpg" alt="daily_trojan" style="max-height: 60px;" class="img-responsive">
+                        </a>
+                    </div>
+                    <div class="span2 center">  
                         <a href="http://la.stgloballink.com/LANEWS/2014/0512/95313.shtml" target="_blank"> 
                             <img src="../assets/images/pages/voices/xingdao.jpg" alt="daily_trojan" style="max-height: 45px;" class="img-responsive">
                         </a>
@@ -648,7 +653,7 @@
                     </div>
                 </div>
 
-                <h4 class="line-divider-inline center voffset6">Student Organizations</h4>
+                <h4 class="line-divider-inline center voffset6">Organizations</h4>
                 <div class="row-fluid voffset4">
                     <div class="span3 center">
                         <a href="http://www.chihuo.org/" target="_blank"> 
@@ -677,7 +682,7 @@
                     </div>
                 </div>
 
-                <h4 class="line-divider-inline center voffset6">Schools</h4>
+                <h4 class="line-divider-inline center voffset6">Universities</h4>
                 <div class="row-fluid voffset5">
                     <div class="span2 left"><p class="size1_gray">University of South Cal</p></div>
                     <div class="span2 left"><p class="size1_gray">UCLA</p></div>
@@ -1247,13 +1252,18 @@
             return number;
         }
 
+        function padToTWO(number) {
+            if (number<=99) { number = ("0"+number).slice(-2); }
+            return number;
+        }
+
         var ref = new Firebase('https://radiant-fire-8364.firebaseio.com/likes');
         var social_count;
         
         // Right now updated manually
-        var wechat_count = 50;
-        var photo_count = 86;
-        var video_count = 16;
+        var wechat_count;
+        var photo_count;
+        var video_count;
         var ride_count = 0;
         var fb_count;
         var renren_count;
@@ -1265,6 +1275,9 @@
             if (snapshot.val() == null)
                 social_count = 200;
             else  {
+        wechat_count = snapshot.val().wechat_count;
+        video_count = snapshot.val().video_count;
+        photo_count = snapshot.val().photo_count;
                 social_count = snapshot.val().fb_likes + snapshot.val().weibo_follows + snapshot.val().weibo_reposts 
                                + snapshot.val().renren_fans + wechat_count;
                 fb_count = snapshot.val().fb_likes;
@@ -1276,14 +1289,13 @@
 
             var total_count = photo_count * 10 + ride_count * 5 + video_count * 60 + social_count;
             document.getElementById("social_count").innerHTML = social_count;
+            document.getElementById("photo_count").innerHTML = photo_count;
+            document.getElementById("video_count").innerHTML = video_count;
 
             $(function () {
                 $('#example').popover({content: "<p class='size2_blk'>Facebook Like: " + fb_count +"</p><p class='size2_blk'>Renren Like: " + renren_count +"</p><p class='size2_blk'>Weibo Like: " + weibo_count +"</p> <p class='size2_blk'>Weibo Reposts: " + weibo_reposts +"</p> <p class='size2_blk'>WeChat Likes: " + wechat_count +"</p>" });
             });
         });
-
-        document.getElementById("photo_count").innerHTML = photo_count;
-        document.getElementById("video_count").innerHTML = video_count;
     </script>
 </body>
 </html>
