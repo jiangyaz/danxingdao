@@ -17,8 +17,13 @@ for ($i = 0; $i < count($reposts_arr); $i++) {
 	$total_reposts = $total_reposts + $post->{'reposts_count'};
 }
 
-$firebase = new Firebase('https://radiant-fire-8364.firebaseio.com/');
-$res_num = $firebase->set('likes/weibo_reposts', $total_reposts);
+if ($total_reposts != NULL){
+	$firebase = new Firebase('https://radiant-fire-8364.firebaseio.com/');
+	$res_num = $firebase->set('likes/weibo_reposts', $total_reposts);
+	echo "total reposts: ".$res_num."\n";
 
-echo "total reposts: ".$res_num."\n";
+	$file = fopen('local_backup/weibo_reposts.txt', 'w');
+	fwrite($file, "$total_reposts");
+	fclose($file);
+}
 ?>

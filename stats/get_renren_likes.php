@@ -12,7 +12,13 @@ $response = $client->execute ( "/v2/page/get", "GET", $queryParams );
 
 $like_num = $response['fansCount'];
 
-$firebase = new Firebase('https://radiant-fire-8364.firebaseio.com/');
-$res_num = $firebase->set('likes/renren_fans', $like_num);
-echo $res_num;
+if ($like_num != NULL){
+	$firebase = new Firebase('https://radiant-fire-8364.firebaseio.com/');
+	$res_num = $firebase->set('likes/renren_fans', $like_num);
+	echo $res_num;
+
+	$file = fopen('local_backup/renren_likes.txt', 'w');
+	fwrite($file, "$like_num");
+	fclose($file);
+}
 ?>
