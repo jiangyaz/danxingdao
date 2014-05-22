@@ -28,7 +28,6 @@ while(true) {
 	echo "page ".$page_num.", reposts:".$page_reposts."\n";
 	$page_num = $page_num + 1;
 }
-
 echo $total_reposts."\n";
 
 if ($total_reposts != NULL){
