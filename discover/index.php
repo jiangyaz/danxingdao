@@ -1,1 +1,1 @@
-<?php header('Location: https://www.flickr.com/photos/123779453@N03'); ?>
+<?php header('Location: http://huaban.com/boards/15949393/'); ?>
