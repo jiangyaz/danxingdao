@@ -2,7 +2,7 @@
 
 require_once join('/', array(__DIR__, '../firebase-php', 'firebaseLib.php'));
 
-$uid   =  "5040920641";
+$uid =  "5040920641";
 $token = "2.00djLJVF0Mp511fe9b9f30b4XzFW_B";
 
 $page_num = 1;
