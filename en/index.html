@@ -215,7 +215,7 @@
                         <div class="span3 center">
                             <img src="../assets/images/pages/what_we_do/ride.png" alt="Concept" class="img-responsive" style="max-height:80px;">
                             <div class="row voffset4">
-                                <p class="sizel_white"><span class="size3_lgray">Ride </span><span id="video_count">0</span><span class="size3_lgray"> miles</span></p>
+                                <p class="sizel_white"><span class="size3_lgray">Ride </span><span id="distance_miles">?</span><span class="size3_lgray"> miles</span></p>
                                 <p class="size1b_white"> Goal：3,800 miles</p>
                             </div>
                         </div>
@@ -1363,6 +1363,7 @@
         var renren_count;
         var weibo_count;
         var weibo_reposts;
+	var distance_miles;
 
         ref.on('value', function(snapshot) 
         {
@@ -1378,6 +1379,7 @@
                 weibo_count = snapshot.val().weibo_follows;
                 weibo_reposts = snapshot.val().weibo_reposts;
                 renren_count = snapshot.val().renren_fans;
+		distance_miles = Math.round(snapshot.val().distance_miles);
                 document.getElementById("update_time").innerHTML = snapshot.val().update_time;
             }
 
@@ -1385,6 +1387,7 @@
             document.getElementById("social_count").innerHTML = social_count;
             document.getElementById("photo_count").innerHTML = photo_count;
             document.getElementById("video_count").innerHTML = video_count;
+            document.getElementById("distance_miles").innerHTML = distance_miles;
 
             $(function () {
                 $('#example').popover({content: "<p class='size2_blk'>Facebook Like: " + fb_count +"</p><p class='size2_blk'>Renren Like: " + renren_count +"</p><p class='size2_blk'>Weibo Like: " + weibo_count +"</p> <p class='size2_blk'>Weibo Reposts: " + weibo_reposts +"</p> <p class='size2_blk'>WeChat Likes: " + wechat_count +"</p>" });

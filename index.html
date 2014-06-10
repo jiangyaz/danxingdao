@@ -219,7 +219,7 @@
                         <div class="span3 center">
                             <img src="../assets/images/pages/what_we_do/ride.png" alt="Concept" class="img-responsive" style="max-height:80px;">
                             <div class="row voffset4">
-                                <p class="sizel_white"><span class="size3_lgray">骑行 </span><span id="video_count">0</span><span class="size3_lgray"> 公里</span></p>
+                                <p class="sizel_white"><span class="size3_lgray">骑行 </span><span id="distance_km">?</span><span class="size3_lgray"> 公里</span></p>
                                 <p class="size1b_white"> 骑行目标：6000 公里</p>
                             </div>
                         </div>
@@ -1425,6 +1425,7 @@
         var renren_count;
         var weibo_count;
         var weibo_reposts;
+	var distance_km;
 
         ref.on('value', function(snapshot) 
         {
@@ -1440,6 +1441,7 @@
                 weibo_count = snapshot.val().weibo_follows;
                 weibo_reposts = snapshot.val().weibo_reposts;
                 renren_count = snapshot.val().renren_fans;
+		distance_km = Math.round(snapshot.val().distance_miles * 1.6934);
                 document.getElementById("update_time").innerHTML = snapshot.val().update_time;
             }
 
@@ -1447,6 +1449,7 @@
             document.getElementById("social_count").innerHTML = social_count;
             document.getElementById("photo_count").innerHTML = photo_count;
             document.getElementById("video_count").innerHTML = video_count;
+            document.getElementById("distance_km").innerHTML = distance_km;
 
             $(function () {
                 $('#example').popover({content: "<p class='size2_blk'>Facebook Like：" + fb_count +"</p><p class='size2_blk'>人人关注：" + renren_count +"</p><p class='size2_blk'>微博关注：" + weibo_count +"</p> <p class='size2_blk'>微博转发：" + weibo_reposts +"</p> <p class='size2_blk'>微信平台关注：" + wechat_count +"</p>" });
