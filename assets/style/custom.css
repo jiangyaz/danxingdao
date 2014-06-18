@@ -208,6 +208,9 @@ a.en-link:hover{
 .tilt.yc { background-image: url("/assets/images/pages/about/yc1.jpg"); }
 .tilt.yc:hover { background-image: url("/assets/images/pages/about/yc2.jpg");}
 
+.tilt.lt { background-image: url("/assets/images/pages/about/lt1.jpg"); }
+.tilt.lt:hover { background-image: url("/assets/images/pages/about/lt2.jpg");}
+
 .zero_left {
 	margin-left : 0px;
 }
