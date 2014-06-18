@@ -373,7 +373,7 @@
                         </div>
                      </div>
                      <div class="span3">
-                        <p class="size2_blk voffset2">微信平台关注</p>
+                        <p class="size2_blk voffset2">微信平台关注/转发</p>
                         <a href="http://www.wechat.com" target="_blank">  
                             <img src="assets/images/pages/support/wechat.png" alt="Wechat" style="max-width: 80px; max-height: 80px;" class="img-responsive vnoffset2">
                         </a>
@@ -1467,6 +1467,7 @@
         var renren_count;
         var weibo_count;
         var weibo_reposts;
+        var wechat_reposts;
 	var distance_km;
 
         ref.on('value', function(snapshot) 
@@ -1474,16 +1475,16 @@
             if (snapshot.val() == null)
                 social_count = 200;
             else  {
-		wechat_count = snapshot.val().wechat_count;
-		video_count = snapshot.val().video_count;
-		photo_count = snapshot.val().photo_count;
-                social_count = snapshot.val().fb_likes + snapshot.val().weibo_follows + snapshot.val().weibo_reposts 
-                               + snapshot.val().renren_fans + wechat_count;
-                fb_count = snapshot.val().fb_likes;
-                weibo_count = snapshot.val().weibo_follows;
-                weibo_reposts = snapshot.val().weibo_reposts;
-                renren_count = snapshot.val().renren_fans;
-		distance_km = Math.round(snapshot.val().distance_miles * 1.60934);
+    		wechat_count = snapshot.val().wechat_count;
+            wechat_reposts = snapshot.val().wechat_reposts;
+    		video_count = snapshot.val().video_count;
+    		photo_count = snapshot.val().photo_count;
+            social_count = snapshot.val().fb_likes + snapshot.val().weibo_follows + snapshot.val().weibo_reposts + snapshot.val().renren_fans + wechat_count + wechat_reposts;
+            fb_count = snapshot.val().fb_likes;
+            weibo_count = snapshot.val().weibo_follows;
+            weibo_reposts = snapshot.val().weibo_reposts;
+            renren_count = snapshot.val().renren_fans;
+    		distance_km = Math.round(snapshot.val().distance_miles * 1.60934);
                 document.getElementById("update_time").innerHTML = snapshot.val().update_time;
             }
 
@@ -1494,7 +1495,7 @@
             document.getElementById("distance_km").innerHTML = distance_km;
 
             $(function () {
-                $('#example').popover({content: "<p class='size2_blk'>Facebook Like：" + fb_count +"</p><p class='size2_blk'>人人关注：" + renren_count +"</p><p class='size2_blk'>微博关注：" + weibo_count +"</p> <p class='size2_blk'>微博转发：" + weibo_reposts +"</p> <p class='size2_blk'>微信平台关注：" + wechat_count +"</p>" });
+                $('#example').popover({content: "<p class='size2_blk'>Facebook Like：" + fb_count +"</p><p class='size2_blk'>人人关注：" + renren_count +"</p><p class='size2_blk'>微博关注：" + weibo_count +"</p> <p class='size2_blk'>微博转发：" + weibo_reposts +"</p> <p class='size2_blk'>微信平台关注：" + wechat_count +"</p><p class='size2_blk'>微信平台转发：" + wechat_reposts +"</p>"  });
             });
         });
 
