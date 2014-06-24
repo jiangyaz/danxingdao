@@ -211,6 +211,10 @@ a.en-link:hover{
 .tilt.lt { background-image: url("/assets/images/pages/about/lt1.jpg"); }
 .tilt.lt:hover { background-image: url("/assets/images/pages/about/lt2.jpg");}
 
+.tilt.linda { background-image: url("/assets/images/pages/about/linda1.jpg"); }
+.tilt.linda:hover { background-image: url("/assets/images/pages/about/linda2.jpg");}
+
+
 .zero_left {
 	margin-left : 0px;
 }
